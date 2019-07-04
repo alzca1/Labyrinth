@@ -17,6 +17,23 @@ function Player (canvas) {
 }
 
 Player.prototype.move = function () {
+    if(this.x === 0) {
+        this.directionX ++;
+        this.lives -= 10; 
+    };
+    if(this.x + this.width === this.canvas.width){
+        this.directionX --;
+        this.lives -= 10; 
+    }
+
+    if(this.y === 0) {
+        this.directionY ++;
+        this.lives -= 10;  
+    };
+    if(this.y + this.height === this.canvas.height){
+        this.directionY --;
+        this.lives -= 10;
+    }
     this.y = this.y + this.directionY 
     this.x = this.x + this.directionX  
 }

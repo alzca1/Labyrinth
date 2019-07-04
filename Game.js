@@ -7,7 +7,8 @@ this.maze = null;
 this.exit = null;
 this.level = 0; 
 this.difficulty = .98;
-this.score = 0; 
+this.score = 0;
+this.lives = null;  
 this.isGameOver = false; 
 this.canvas = canvas; 
 this.ctx = this.canvas.getContext('2d'); /*preguntar/averiguar qué es esto */
@@ -30,14 +31,12 @@ Game.prototype.startGame = function () {
         this.checkGameOver();
         // this.checkFinishPoint(); 
         if (isNextLevel) {
-            console.log('first')
+            this.updateScore();            
             this.startGame();
-        } else if(!this.isGameOver && !isNextLevel){
-            console.log('seconds')
+        } else if(!this.isGameOver && !isNextLevel){            
             this.requestAnimationFrameID = requestAnimationFrame(loop); /*preguntar/averiguar qué es esto */
         } else {
-            console.log('GAME OVER');
-           this.onGameOver();
+             this.onGameOver();
         }
             
     }
@@ -56,6 +55,7 @@ Game.prototype.draw = function() {
     this.player.draw(); 
     this.maze.blocks.forEach((block) => block.draw());
     this.maze.exit.draw();
+    this.drawScore();
 };
 
 Game.prototype.gameOverCallback = function (callback) { // no entiendo esta función
@@ -65,7 +65,7 @@ Game.prototype.gameOverCallback = function (callback) { // no entiendo esta func
 Game.prototype.checkWalls = function () {
      this.maze.blocks.forEach((block) =>{
         if(block.checkCollision(this.player.x, this.player.y, this.player.width, this.player.height)){
-            this.player.lives--;
+            this.player.lives -= 2;
             console.log(this.player.lives)
         } else {
             this.isGameOver = true;
@@ -76,8 +76,8 @@ Game.prototype.checkWalls = function () {
 Game.prototype.checkExit = function () {
     var isNextLevel = false;
     if(this.maze.exit.checkCollision(this.player.x,this.player.y,this.player.width,this.player.height)){
+        
         this.difficulty -= 0.03;
-        this.score += 1000;
         this.level += 1;
         isNextLevel = true;
         cancelAnimationFrame(this.requestAnimationFrameID);
@@ -95,3 +95,18 @@ Game.prototype.checkGameOver = function(){
         console.log('true!')
     }
 }
+
+Game.prototype.drawScore = function() {
+    this.ctx.fillStyle = 'yellow'
+    this.ctx.font = "12px Arial";
+    this.ctx.fillText(`Score: ${this.score}`, 240, 20);
+    this.ctx.font = "12px Arial";
+    this.ctx.fillText(`Level: ${this.level}`, this.canvas.width - 460, 20);
+    this.ctx.font = "12px Arial";
+    this.ctx.fillText(`Life: ${this.player.lives}`, this.canvas.width - 60, 20);
+ }
+
+
+ Game.prototype.updateScore = function() {
+     this.score = 25 * 100 - this.player.lives ;
+ }
