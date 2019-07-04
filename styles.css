@@ -17,10 +17,11 @@ html {
   /* ---- typography ---- */
   
   body {
-    color: #111;
+    color: white;
     font-family: Helvetica, Arial, sans-serif;
     font-size: 16px;
     line-height: 147%;
+    background-color: black; 
   }
   
   h1 {}
