@@ -34,6 +34,22 @@ html {
     margin: 0;
   }
   
+  .glow {
+    border: 1px solid blue;
+    
+
+  }
+
+  .animation-glow {
+    animation: glowing 5000ms infinite;
+  }
+
+  @keyframes glowing {
+    0% { box-shadow: 0 0 -10px #0055c4; }
+    40% { box-shadow: 0 0 20px #3e5eeb; }
+    60% { box-shadow: 0 0 20px #0d8af0; }
+    100% { box-shadow: 0 0 -10px #4095f6; }
+  }
   
   
   /* ---- layout ---- */

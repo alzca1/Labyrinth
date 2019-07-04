@@ -38,8 +38,8 @@ function main () {
         <section>
             <h3> Basic Instructions to play the game: </h3>
 
-            <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam nesciunt voluptas </p>
-
+            <p> Your goal is to reach the exit tile, avoiding the red tiles (which will decrease your life level dramatically). As you progress through levels, the number of red tiles will increase, making more and more difficult to reach the green tile. Good luck! </p>
+            <p> The controls for the game are: ⬆️ UP ⬇️ DOWN ⬅️ LEFT ➡️ RIGHT </p>
             <button class="return-button"> Return to main </button>
         </section>
         `);
@@ -57,7 +57,7 @@ function main () {
 
         var gameScreen = buildDom(`
         <section>
-        <canvas width= "500px" height="500px" </canvas>
+        <canvas class="glow animation-glow" width= "500px" height="500px" </canvas>
         </section>
         `)
 
