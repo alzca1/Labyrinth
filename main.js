@@ -44,7 +44,7 @@ function main () {
             <p> ⬆ UP ⬇ DOWN ⬅ LEFT ➡ RIGHT </>
             
             <button class=" button return-button"> Return to main </button>
-            <img src="./images/david.png">
+            
         
         </section>
         `);
