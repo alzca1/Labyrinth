@@ -6,13 +6,16 @@ function Player (canvas) {
     this.ctx = this.canvas.getContext('2d');
     this.x = 15;
     this.y = 15;
-    this.height = 10; 
+    this.width = 20;
+    this.height = 20; 
     this.lives = 100;
     this.velocity = 3;
     this.color = 'blue';
-    this.width = 10;
+    
     this.directionX = 0;
-    this.directionY = 0; 
+    this.directionY = 0;
+    this.img = new Image();
+    this.img.src = "./images/female.png";
 
 }
 
@@ -39,8 +42,9 @@ Player.prototype.move = function () {
 }
 
 Player.prototype.draw = function () {
-    this.ctx.fillStyle = this.color; 
-    this.ctx.fillRect(this.x, this.y, this.width,this.height)
+    // this.ctx.fillStyle = this.color; 
+    // this.ctx.fillRect(this.x, this.y, this.width,this.height)
+    this.ctx.drawImage(this.img, this.x, this.y, this.width, this.height)
 }
 
 Player.prototype.setDirectionX = function (newDirection) {

@@ -16,9 +16,10 @@ function main () {
 
         var splashScreen = buildDom(`
             <section>
-            <h1> Labyrinth</h1>
-            <button class="start-button"> Start Game </button>
-            <button class="instruct-button"> Check Instructions </button>
+            <img class="logo-main" src="./images/labyrinth_logo.png" >
+            <img class="game-image" src="./images/game_image.gif" >
+            <button class=" button start-button"> START BUTTON</button>
+            <button class=" button instruct-button"> HOW-TO</button>
             </section>
 
         `);
@@ -36,11 +37,12 @@ function main () {
 
         var instructionsScreen = buildDom(`
         <section>
-            <h3> Basic Instructions to play the game: </h3>
+            <h3> Basic Instructions to play the game </h3>
 
-            <p> Your goal is to reach the exit tile, avoiding the red tiles (which will decrease your life level dramatically). As you progress through levels, the number of red tiles will increase, making more and more difficult to reach the green tile. Good luck! </p>
-            <p> The controls for the game are: ⬆️ UP ⬇️ DOWN ⬅️ LEFT ➡️ RIGHT </p>
-            <button class="return-button"> Return to main </button>
+            <p> Help Sarah find her baby brother Toby through the labyrinth, avoiding either Jareth the Goblin King or the borders of the labyrinth(both will decrease your life!) </p>
+            <p> The controls for the game are:  </p>
+            <p> ⬆ UP ⬇ DOWN ⬅ LEFT ➡ RIGHT </>
+            <button class=" button return-button"> Return to main </button>
         </section>
         `);
 
@@ -85,8 +87,8 @@ function main () {
         var createGameOverScreen = buildDom(`
         <section>
             <h1> GAME  OVER </h1>
-            <h4> Try again! </h4>
-            <button class="newgame-button"> Play new game! </button>
+            
+            <button class=" button newgame-button"> Play new game! </button>
 
 
         </section>

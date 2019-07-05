@@ -17,25 +17,49 @@ html {
   /* ---- typography ---- */
   
   body {
+    margin: 0px;
+    padding: 0 px; 
     color: white;
-    font-family: Helvetica, Arial, sans-serif;
+    font-family: 'Press Start 2P', cursive;
     font-size: 16px;
     line-height: 147%;
-    background-color: black; 
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: baseline; 
+  }
+
+  canvas {
+    width: 500px; 
+    position: relative; 
+    margin: 0 auto;
+
   }
   
   h1 {}
   
   h2 {}
   
-  h3 {}
-  
-  p {
-    margin: 0;
+  h3 {
+    text-align: center; 
+    color: yellow; 
+  }
+
+  h4 {
+    text-align: center; 
   }
   
+  p {
+    font-size: 11px;
+    text-align: center;
+    padding: 0 20px; 
+    
+  }
+
+  
+  
   .glow {
-    border: 1px solid blue;
+    border: 1px solid #0055c4;
     
 
   }
@@ -46,9 +70,9 @@ html {
 
   @keyframes glowing {
     0% { box-shadow: 0 0 -10px #0055c4; }
-    40% { box-shadow: 0 0 20px #3e5eeb; }
-    60% { box-shadow: 0 0 20px #0d8af0; }
-    100% { box-shadow: 0 0 -10px #4095f6; }
+    40% { box-shadow: 0 0 20px #0055c4; }
+    60% { box-shadow: 0 0 20px #0055c4; }
+    100% { box-shadow: 0 0 -10px #0055c4; }
   }
   
   
@@ -92,15 +116,31 @@ html {
   /* ---- components ---- */
   
   .button {
-    width: 100%;
-    background-color: blue;
-    color: #fff;
-    border: 1px solid #fff
+    font-family: 'Press Start 2P', cursive;
+    width: 200px;
+    color: yellow;
+    background-color: black;
+    display: block;
+    margin: 0 auto;
+    padding: 20px 0;
+    border:none;
+    cursor:pointer;
+  }
+
+  .button:hover {
+    font-size: 12px;
+    text-shadow: 2px 2px  #0055c4;
   }
   
   .button-alt {
     color: blue;
     background-color: #fff;
+  }
+
+  .logo-main{
+    width: 400px;
+    padding-top: 10px; 
+
   }
   
   /* ---- section ---- */
@@ -111,4 +151,13 @@ html {
   
   section.testimonials .button {
     margin-bottom: 10px;
+  }
+
+  img {
+    display: block;
+    margin: 0 auto; 
+  }
+
+  .game-image{
+    width: 500px; 
   }
