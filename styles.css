@@ -35,6 +35,8 @@ html {
     margin: 0 auto;
 
   }
+
+  
   
   h1 {}
   
@@ -51,8 +53,9 @@ html {
   
   p {
     font-size: 11px;
-    text-align: center;
-    padding: 0 20px; 
+    text-align: justify;
+    padding: 0 130px;
+    max-width: 800px;
     
   }
 
@@ -60,8 +63,6 @@ html {
   
   .glow {
     border: 1px solid #0055c4;
-    
-
   }
 
   .animation-glow {
@@ -142,6 +143,13 @@ html {
     padding-top: 10px; 
 
   }
+
+  .instructions img{
+    width: 200px;
+    margin: 0 300px;
+    
+    
+  }
   
   /* ---- section ---- */
   
@@ -160,4 +168,8 @@ html {
 
   .game-image{
     width: 500px; 
+  }
+
+  .ingame {
+    background-color: rgb(43, 42, 58)
   }

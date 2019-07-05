@@ -108,5 +108,5 @@ Game.prototype.drawScore = function() {
 
 
  Game.prototype.updateScore = function() {
-     this.score = 25 * 100 - this.player.lives ;
+     this.score = this.player.lives * 5 ;
  }

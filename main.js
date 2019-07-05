@@ -15,7 +15,7 @@ function main () {
     function createSplashScreen () {
 
         var splashScreen = buildDom(`
-            <section>
+            <section class="splash">
             <img class="logo-main" src="./images/labyrinth_logo.png" >
             <img class="game-image" src="./images/game_image.gif" >
             <button class=" button start-button"> START BUTTON</button>
@@ -36,13 +36,16 @@ function main () {
     function createInstructionsScreen() {
 
         var instructionsScreen = buildDom(`
-        <section>
+        <section class="instructions">
             <h3> Basic Instructions to play the game </h3>
 
-            <p> Help Sarah find her baby brother Toby through the labyrinth, avoiding either Jareth the Goblin King or the borders of the labyrinth(both will decrease your life!) </p>
+            <p> Help Sarah find her baby brother Toby through the labyrinth, avoiding either Jareth the Goblin King or the borders of the labyrinth (both will decrease your life!). </p>
             <p> The controls for the game are:  </p>
             <p> ⬆ UP ⬇ DOWN ⬅ LEFT ➡ RIGHT </>
+            
             <button class=" button return-button"> Return to main </button>
+            <img src="./images/david.png">
+        
         </section>
         `);
 
@@ -59,7 +62,7 @@ function main () {
 
         var gameScreen = buildDom(`
         <section>
-        <canvas class="glow animation-glow" width= "500px" height="500px" </canvas>
+        <canvas class="glow animation-glow ingame" width= "500px" height="500px" </canvas>
         </section>
         `)
 
@@ -85,9 +88,9 @@ function main () {
 
     function createGameOverScreen () {
         var createGameOverScreen = buildDom(`
-        <section>
+        <section class="gameover">
             <h1> GAME  OVER </h1>
-            
+            <h4> Try again! </h4>
             <button class=" button newgame-button"> Play new game! </button>
 
 

@@ -59,11 +59,11 @@ Maze.prototype.setUp = function() {
         for(let i = 1; i < this.maze.grid.length -1; i++){
         this.maze.grid[i].forEach((tile, index) => {
             if(tile === 1) {
-                var newBlock = new Block(this.canvas,index*30, i*30)
+                var newBlock = new Block(this.canvas,index*25, i*25)
                 this.blocks.push(newBlock);
                 // this.context.fillRect(index*30, i*30, this.widthTile, this.heightTile);
             } else if (tile === 4){
-                var newExit = new Exit(this.canvas,index*25, i*20);
+                var newExit = new Exit(this.canvas,index*25, i*25);
                 this.exit = newExit;
             }
         })
