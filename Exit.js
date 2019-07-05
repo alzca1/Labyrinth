@@ -10,7 +10,7 @@ function Exit (canvas, x, y) {
     this.color = 'green';
     this.width = 20;
     this.img = new Image();
-    this.img.src = "./images/baby_sprit.png";
+    this.img.src = "./images/baby.png";
    
 }
 
