@@ -45,12 +45,13 @@ function Maze (canvas){
 
 Maze.prototype.generateWall = function  (difficulty){
     for(let i = 1; i < this.maze.grid.length -1; i++){
-        this.maze.grid[i].forEach((tile, index) => { // ojo al recurso de poner un segundo parametro
-            var random = Math.random();
-            if(random > difficulty && tile === 0) {
-                this.maze.grid[i][index] = this.wallTile;
+        this.maze.grid[i].forEach((tile, index) => { // ojo al recurso de poner un segundo parametro index en forEach (para no tener que meter un segundo loop)
+            var random = Math.random(); // hacemos un random para crear la probabilidad de aparición de enemigos
+            if(random > difficulty && tile === 0) { // condicional de si random es mayor a la dificultad y la celda está vacía
+                this.maze.grid[i][index] = this.wallTile; // la convierta en una celda con enemigo, igualandola a this.wallTile
             }
         })
+        console.log(this.maze.grid) // console de control para comprobar que el grid sale bien. 
     }
 };
 
